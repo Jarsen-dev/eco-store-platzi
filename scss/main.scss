@@ -1,7 +1,7 @@
 $primary-color: #FFEFE7;
 $secondary-color: #FFDAC6;
-$tertiary-color: #BABD8D;
-$quaternion-color: #FA9500;
+$terniary-color: #BABD8D;
+$quaternary-color: #FA9500;
 $primary-text-color: #7C6A0A;
 $font-stack: 'IBM Plex Sans', sans-serif;
 $paragraph-size: 1.5em;
@@ -58,7 +58,7 @@ article{
   button{
     width: 12vw;
     padding: 20px;
-    background-color: $quaternion-color;
+    background-color: $quaternary-color;
     border-style: none;
     cursor: pointer;
     border-radius: 35px;
@@ -79,7 +79,7 @@ article{
 }
 
 section{
-  width: 100%;
+  width: auto;
   height: auto;
   padding: 60px;
   h2{
@@ -87,33 +87,79 @@ section{
     font-size: 2em;
   }
   .healthcare{
+    padding-bottom: 60px;
     h2{
       font-weight: 300;
       padding-bottom: 60px;
     }
-    .product-card{
-      width: 12vw;
+    .card-section{
+      display: flex;
+      width: auto;
       height: auto;
-      background-color: $secondary-color;
-      color: $primary-text-color;
-      padding: 20px;
-      border-radius: 8px;
-      svg{
-        display: flex;
-        align-items: flex-end;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      column-gap: 180px;
+      row-gap: 80px;
+      .product-card{
+        width: 18vw;
+        height: 58vh;
+        background-color: $secondary-color;
+        color: $primary-text-color;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 2px 2px 15px -3px rgba(61,57,61,0.81);
+        h3{
+          margin-bottom: 0;
+        }
+        p{
+          margin-top: 0;
+        }
+        .icon{
+          width: 100%;
+          display: flex;
+          justify-content: flex-end;
+          padding-bottom: 12px;
+          svg{
+            width: 28px;
+            height: 28px;
+            path{
+              stroke: #7C6A0A;
+            }
+          }
+        }
+        .product-image{
+          width: 100%;
+          height: auto;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          img{
+            width: 18vw;
+            height: 40vh;
+            object-fit: cover;
+            border-radius: 6px;
+          }
+        }
       }
-      img{
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        border-radius: 6px;
+    }
+  }
+  .furniture{
+    @extend .healthcare;
+    .card-section{
+      .product-card{
+        background-color: $terniary-color;
+        color: white;
+        .icon svg path{
+          stroke: white;
+        }
       }
     }
   }
 }
 
 footer{
-  background-color: $quaternion-color;
+  background-color: $quaternary-color;
   width: 100%;
   height: 250px;
 }

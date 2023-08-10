@@ -72,7 +72,7 @@ article .image-section img {
 }
 
 section {
-  width: 100%;
+  width: auto;
   height: auto;
   padding: 60px;
 }
@@ -80,28 +80,72 @@ section h2 {
   color: #7C6A0A;
   font-size: 2em;
 }
-section .healthcare h2 {
+section .healthcare, section .furniture {
+  padding-bottom: 60px;
+}
+section .healthcare h2, section .furniture h2 {
   font-weight: 300;
   padding-bottom: 60px;
 }
-section .healthcare .product-card {
-  width: 12vw;
+section .healthcare .card-section, section .furniture .card-section {
+  display: flex;
+  width: auto;
   height: auto;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  -moz-column-gap: 180px;
+       column-gap: 180px;
+  row-gap: 80px;
+}
+section .healthcare .card-section .product-card, section .furniture .card-section .product-card {
+  width: 18vw;
+  height: 58vh;
   background-color: #FFDAC6;
   color: #7C6A0A;
   padding: 20px;
   border-radius: 8px;
+  box-shadow: 2px 2px 15px -3px rgba(61, 57, 61, 0.81);
 }
-section .healthcare .product-card svg {
-  display: flex;
-  align-items: flex-end;
+section .healthcare .card-section .product-card h3, section .furniture .card-section .product-card h3 {
+  margin-bottom: 0;
 }
-section .healthcare .product-card img {
+section .healthcare .card-section .product-card p, section .furniture .card-section .product-card p {
+  margin-top: 0;
+}
+section .healthcare .card-section .product-card .icon, section .furniture .card-section .product-card .icon {
   width: 100%;
-  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding-bottom: 12px;
+}
+section .healthcare .card-section .product-card .icon svg, section .furniture .card-section .product-card .icon svg {
+  width: 28px;
+  height: 28px;
+}
+section .healthcare .card-section .product-card .icon svg path, section .furniture .card-section .product-card .icon svg path {
+  stroke: #7C6A0A;
+}
+section .healthcare .card-section .product-card .product-image, section .furniture .card-section .product-card .product-image {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+section .healthcare .card-section .product-card .product-image img, section .furniture .card-section .product-card .product-image img {
+  width: 18vw;
+  height: 40vh;
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 6px;
+}
+section .furniture .card-section .product-card {
+  background-color: #BABD8D;
+  color: white;
+}
+section .furniture .card-section .product-card .icon svg path {
+  stroke: white;
 }
 
 footer {
