@@ -6,6 +6,21 @@ $primary-text-color: #7C6A0A;
 $font-stack: 'IBM Plex Sans', sans-serif;
 $paragraph-size: 1.5em;
 
+@mixin flexCenter($direction, $content, $align){
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $content;
+  align-items: $align;
+}
+
+@mixin buttonStyle{
+  button{
+    background: none;
+    border-style: none;
+    cursor: pointer;
+  }
+}
+
 body{
   margin: 0;
   padding: 0;
@@ -15,8 +30,7 @@ body{
 
 nav{
   width: auto;
-  display: flex;
-  justify-content: space-between;
+  @include flexCenter(row, space-between, center);
   color: $primary-text-color;
   padding: 15px 0 15px 0;
   p{
@@ -27,11 +41,7 @@ nav{
     display: flex;
     gap: 15px;
     padding-right: 65px;
-    button{
-      background: none;
-      border-style: none;
-      cursor: pointer;
-    }
+    @include buttonStyle();
   }
 }
 
@@ -39,11 +49,9 @@ article{
   width: auto;
   color: $primary-text-color;
   padding: 70px 60px 0 60px;
-  display: flex;
-  justify-content: space-between;
+  @include flexCenter(row, space-between, center);
   .impact-section{
-    display: flex;
-    flex-direction: column;
+    @include flexCenter(column, center, flex-start);
     padding-top: 50px;
     gap: 25px;
   }
@@ -55,12 +63,11 @@ article{
   p{
     font-size: $paragraph-size;
   }
+  @include buttonStyle();
   button{
     width: 12vw;
     padding: 20px;
     background-color: $quaternary-color;
-    border-style: none;
-    cursor: pointer;
     border-radius: 35px;
     color: white;
     font-size: 1em;
@@ -93,11 +100,9 @@ section{
       padding-bottom: 60px;
     }
     .card-section{
-      display: flex;
       width: auto;
       height: auto;
-      justify-content: center;
-      align-items: center;
+      @include flexCenter(row, center, center);
       flex-wrap: wrap;
       column-gap: 180px;
       row-gap: 80px;
@@ -117,8 +122,7 @@ section{
         }
         .icon{
           width: 100%;
-          display: flex;
-          justify-content: flex-end;
+          @include flexCenter(row, flex-end, center);
           padding-bottom: 12px;
           svg{
             width: 28px;
@@ -131,9 +135,7 @@ section{
         .product-image{
           width: 100%;
           height: auto;
-          display: flex;
-          justify-content: center;
-          align-items: center;
+          @include flexCenter(row, center, center);
           img{
             width: 18vw;
             height: 40vh;
