@@ -1,5 +1,5 @@
 body {
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
   background-color: #FFEFE7;
   font-family: "IBM Plex Sans", sans-serif;
@@ -66,6 +66,9 @@ article button {
   border-radius: 35px;
   color: white;
   font-size: 1em;
+}
+article button:hover {
+  transform: scale(1.1);
 }
 article .image-section {
   width: 500px;
@@ -175,10 +178,10 @@ section .furniture .card-section .product-card .icon svg path {
   align-items: center;
 }
 .about-us .mision-section .earth, .about-us .mision-section .innovation {
+  color: #E86424;
   width: 35vw;
   display: flex;
   gap: 40px;
-  color: #E86424;
 }
 .about-us .mision-section .earth img, .about-us .mision-section .innovation img {
   -o-object-fit: contain;
@@ -188,8 +191,62 @@ section .furniture .card-section .product-card .icon svg path {
   text-align: center;
   font-size: 1.5em;
 }
+.gallery h2 {
+  font-weight: bold;
+  padding-bottom: 60px;
+}
+.gallery .gallery-img {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.gallery .gallery-img img {
+  width: 28vw;
+  height: 45vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: 5px 35%;
+     object-position: 5px 35%;
+  border-radius: 16px;
+}
+.gallery .gallery-img img:hover {
+  transform: scale(1.1);
+}
+
+.location {
+  color: #E86424;
+}
+.location h2 {
+  padding: 60px 0 60px 0;
+}
+.location .map {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 80px;
+}
+.location h3, .location p {
+  font-size: 1.5em;
+  margin: 0;
+}
+.location p {
+  padding-bottom: 50px;
+}
+
 footer {
   background-color: #FA9500;
   width: 100%;
-  height: 250px;
+  height: auto;
+  color: white;
+  padding: 40px;
+}
+footer .social-media {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  padding-bottom: 30px;
 }/*# sourceMappingURL=main.css.map */
